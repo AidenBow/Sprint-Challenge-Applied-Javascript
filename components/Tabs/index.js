@@ -9,7 +9,7 @@
 //    <div class="tab">topic here</div>
 
 
-const axios = require('axios');
+//const axios = require('axios');
 
 function Tab(data) {
     console.log(data)
@@ -20,11 +20,11 @@ function Tab(data) {
     return tab
 }
 
-//const topics = document.querySelector('.topics')
+const topics = document.querySelector('.topics')
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
 .then(response => {
-    //response.data.topics.forEach(topic => topics.appendChild(Tab(topic)))
+    response.data.topics.forEach(topic => topics.appendChild(Tab(topic)))
   })
   .catch(error => {
     console.log(error.response);
