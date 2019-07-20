@@ -12,7 +12,6 @@
 //const axios = require('axios');
 
 function Tab(data) {
-    console.log(data)
     const tab = document.createElement('div')
     tab.classList.add('tab')
     tab.textContent = data
@@ -27,5 +26,5 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
     response.data.topics.forEach(topic => topics.appendChild(Tab(topic)))
   })
   .catch(error => {
-    console.log(error.response);
+    console.log(error);
   })
